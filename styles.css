@@ -1,0 +1,1138 @@
+/*=========================================
+            GOOGLE FONT
+=========================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*=========================================
+            ROOT VARIABLES
+=========================================*/
+
+:root{
+
+    --primary:#2e7d32;
+    --secondary:#43a047;
+    --light:#f5fff4;
+    --dark:#1b4332;
+    --white:#ffffff;
+    --glass:rgba(255,255,255,.15);
+    --glassBorder:rgba(255,255,255,.25);
+    --shadow:0 15px 35px rgba(0,0,0,.18);
+    --transition:.4s ease;
+
+}
+
+/*=========================================
+            GLOBAL
+=========================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:green;
+    font-family:'Poppins',sans-serif;
+    background:#f8faf8;
+    color:#333;
+    overflow-x:hidden;
+
+}
+
+section{
+
+    padding:80px 0;
+
+}
+
+img{
+
+    width:100%;
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+ul{
+
+    padding-left:20px;
+
+}
+
+/*=========================================
+            NAVBAR
+=========================================*/
+
+.glass-nav{
+
+    background:rgba(12, 180, 24, 0.45);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,255,255,.15);
+    transition:.4s;
+
+}
+
+.navbar-brand{
+
+    font-size:1.6rem;
+    font-weight:700;
+
+}
+
+.nav-link{
+
+    color:#fff !important;
+    margin-left:15px;
+    transition:.3s;
+
+}
+
+.nav-link:hover,
+.nav-link.active{
+
+    color:#8dff9d !important;
+
+}
+
+.navbar .btn{
+
+    font-weight:600;
+
+}
+
+/*=========================================
+            HERO SECTION
+=========================================*/
+
+.hero{
+
+    position:relative;
+    min-height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,.55),
+    rgba(0,0,0,.55)),
+
+    url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    display:flex;
+    align-items:center;
+
+}
+
+.overlay{
+
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.20);
+
+}
+
+.hero-content{
+
+    position:relative;
+    z-index:10;
+    color:white;
+
+}
+
+.hero h1{
+
+    line-height:1.2;
+
+}
+
+.hero p{
+
+    max-width:650px;
+
+}
+
+/*=========================================
+            BUTTONS
+=========================================*/
+
+.btn-success{
+
+    background:var(--primary);
+    border:none;
+
+}
+
+.btn-success:hover{
+
+    background:var(--secondary);
+    transform:translateY(-3px);
+
+}
+
+.btn{
+
+    transition:var(--transition);
+
+}
+
+/*=========================================
+            GLASS CARD
+=========================================*/
+
+.glass-card{
+
+    background:rgba(255,255,255,.22);
+
+    backdrop-filter:blur(15px);
+
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.glass-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+/*=========================================
+            PAGE HEADER
+=========================================*/
+
+.page-header{
+
+    position:relative;
+
+    height:55vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    color:#fff;
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-attachment:fixed;
+
+}
+
+.page-content{
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+/*=========================================
+            PAGE BACKGROUNDS
+=========================================*/
+
+.crop-bg{
+
+background:
+
+linear-gradient(rgba(0,0,0,.55),
+rgba(0,0,0,.45)),
+
+url("https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1600&q=80");
+
+background-size:cover;
+background-position:center;
+
+}
+
+.market-bg{
+
+background:
+
+linear-gradient(rgba(0,0,0,.55),
+rgba(0,0,0,.45)),
+
+url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80");
+
+background-size:cover;
+background-position:center;
+
+}
+
+.schemes-bg{
+
+background:
+
+linear-gradient(rgba(0,0,0,.55),
+rgba(0,0,0,.45)),
+
+url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80");
+
+background-size:cover;
+background-position:center;
+
+}
+
+.tips-bg{
+
+background:
+
+linear-gradient(rgba(0,0,0,.55),
+rgba(0,0,0,.45)),
+
+url("https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1600&q=80");
+
+background-size:cover;
+background-position:center;
+
+}
+
+.contact-bg{
+
+background:
+
+linear-gradient(rgba(0,0,0,.55),
+rgba(0,0,0,.45)),
+
+url("https://images.unsplash.com/photo-1492496913980-501348b61469?auto=format&fit=crop&w=1600&q=80");
+
+background-size:cover;
+background-position:center;
+
+}
+
+/*=========================================
+            COUNTER SECTION
+=========================================*/
+
+.counter-section{
+
+    background:linear-gradient(135deg,#2e7d32,#1b5e20);
+
+    color:#fff;
+
+    padding:70px 0;
+
+}
+
+.counter{
+
+    font-size:3rem;
+
+    font-weight:700;
+
+}
+
+.counter-section p{
+
+    font-size:1.1rem;
+
+}
+
+/*=========================================
+            CTA SECTION
+=========================================*/
+
+.cta-section{
+
+    background:
+
+    linear-gradient(rgba(6, 48, 31, 0.85),
+    rgba(3, 32, 20, 0.85)),
+
+    url("");
+
+    background-size:cover;
+
+    background-position:center;
+
+    color:white;
+
+    text-align:center;
+
+}
+/*=========================================
+            SECTION TITLES
+=========================================*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-weight:700;
+    color:var(--dark);
+}
+
+section h2{
+    margin-bottom:15px;
+}
+
+.text-muted{
+    font-size:1rem;
+}
+
+/*=========================================
+            CROP CARDS
+=========================================*/
+
+.crop-card{
+    overflow:hidden;
+    border-radius:20px;
+}
+
+.crop-card img{
+    height:240px;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.crop-card:hover img{
+    transform:scale(1.08);
+}
+
+.crop-card .card-body{
+    padding:25px;
+}
+
+.crop-card h4{
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.crop-card ul{
+    margin-top:15px;
+    padding-left:18px;
+}
+
+.crop-card li{
+    margin-bottom:8px;
+}
+
+/*=========================================
+            TABLE
+=========================================*/
+
+.table{
+    margin-bottom:0;
+}
+
+.table th{
+    font-weight:600;
+}
+
+.table td{
+    vertical-align:middle;
+}
+
+.table-hover tbody tr:hover{
+    background:#eef8ee;
+    transition:.3s;
+}
+
+/*=========================================
+            SEARCH BAR
+=========================================*/
+
+#marketSearch{
+
+    height:55px;
+
+    border-radius:12px;
+
+    border:1px solid #d8d8d8;
+
+    box-shadow:none;
+
+}
+
+#marketSearch:focus{
+
+    border-color:var(--secondary);
+
+    box-shadow:0 0 0 .25rem rgba(46,125,50,.15);
+
+}
+
+/*=========================================
+            FORMS
+=========================================*/
+
+.form-control{
+
+    border-radius:12px;
+
+    padding:12px 15px;
+
+    border:1px solid #d8d8d8;
+
+    box-shadow:none;
+
+}
+
+.form-control:focus{
+
+    border-color:var(--secondary);
+
+    box-shadow:0 0 0 .25rem rgba(46,125,50,.18);
+
+}
+
+textarea.form-control{
+
+    resize:none;
+
+}
+
+.form-label{
+
+    font-weight:600;
+
+}
+
+/*=========================================
+            CONTACT PAGE
+=========================================*/
+
+#contactForm button{
+
+    transition:.4s;
+
+}
+
+#contactForm button:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.accordion-item{
+
+    border:none;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    margin-bottom:15px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.accordion-button{
+
+    font-weight:600;
+
+}
+
+.accordion-button:not(.collapsed){
+
+    background:#edf8ed;
+
+    color:var(--primary);
+
+}
+
+iframe{
+
+    border-radius:20px;
+
+}
+
+/*=========================================
+            LOGIN PAGE
+=========================================*/
+
+.login-page{
+
+    min-height:100vh;
+
+    background:
+
+    linear-gradient(rgba(0,0,0,.45),
+    rgba(0,0,0,.45)),
+
+    url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-attachment:fixed;
+
+}
+
+.login-section{
+
+    padding-top:100px;
+
+    padding-bottom:60px;
+
+}
+
+.login-card{
+
+    border-radius:25px;
+
+    animation:fadeUp 1s ease;
+
+}
+
+.login-card h2{
+
+    color:var(--primary);
+
+}
+
+.login-card .form-control{
+
+    height:52px;
+
+}
+
+.login-card a{
+
+    color:var(--primary);
+
+}
+
+.login-card a:hover{
+
+    color:var(--secondary);
+
+}
+
+/*=========================================
+            ICONS
+=========================================*/
+
+.display-3,
+.display-4{
+
+    color:var(--primary);
+
+}
+
+.bi-facebook:hover{
+
+    color:#1877f2;
+
+}
+
+.bi-instagram:hover{
+
+    color:#e1306c;
+
+}
+
+.bi-twitter-x:hover{
+
+    color:#000;
+
+}
+
+.bi-linkedin:hover{
+
+    color:#0a66c2;
+
+}
+
+/*=========================================
+            LIST GROUP
+=========================================*/
+
+.list-group-item{
+
+    border:none;
+
+    padding:15px;
+
+    font-weight:500;
+
+}
+
+/*=========================================
+            FOOTER
+=========================================*/
+
+footer{
+
+    background:#173d27;
+
+    color:#fff;
+
+    padding:60px 0 25px;
+
+}
+
+footer h4{
+
+    color:#fff;
+
+}
+
+footer p{
+
+    color:#ddd;
+
+}
+
+footer hr{
+
+    border-color:rgba(255,255,255,.2);
+
+}
+
+footer a{
+
+    color:#fff;
+
+    font-size:22px;
+
+    margin-left:15px;
+
+    transition:.3s;
+
+}
+
+footer a:hover{
+
+    color:#7dff9f;
+
+}
+
+/*=========================================
+            UTILITIES
+=========================================*/
+
+.rounded-4{
+
+    border-radius:20px !important;
+
+}
+
+.shadow{
+
+    box-shadow:0 20px 40px rgba(0,0,0,.18)!important;
+
+}
+
+.bg-light{
+
+    background:#f8fcf8 !important;
+
+}
+
+.text-success{
+
+    color:var(--primary)!important;
+}
+/*=========================================
+            ANIMATIONS
+=========================================*/
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes zoomIn{
+
+    from{
+
+        opacity:0;
+        transform:scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+/*=========================================
+            SCROLL ANIMATION
+=========================================*/
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:all .8s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/*=========================================
+            IMAGE EFFECTS
+=========================================*/
+
+img{
+
+    transition:.4s;
+
+}
+
+img:hover{
+
+    transform:scale(1.02);
+
+}
+
+/*=========================================
+            BUTTON EFFECT
+=========================================*/
+
+.btn{
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/*=========================================
+            GLASS CARD EFFECT
+=========================================*/
+
+.glass-card{
+
+    animation:fadeUp .8s ease;
+
+}
+
+.glass-card:hover{
+
+    box-shadow:0 25px 45px rgba(0,0,0,.18);
+
+}
+
+/*=========================================
+            NAVBAR SCROLL
+=========================================*/
+
+.navbar.scrolled{
+
+    background:#173d27 !important;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.18);
+
+}
+
+/*=========================================
+            SOCIAL ICONS
+=========================================*/
+
+footer i{
+
+    transition:.3s;
+
+}
+
+footer i:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/*=========================================
+            HERO TEXT
+=========================================*/
+
+.hero h1{
+
+    animation:fadeUp 1s ease;
+
+}
+
+.hero p{
+
+    animation:fadeUp 1.3s ease;
+
+}
+
+.hero .btn{
+
+    animation:fadeUp 1.6s ease;
+
+}
+
+/*=========================================
+            COUNTER
+=========================================*/
+
+.counter{
+
+    animation:zoomIn .8s ease;
+
+}
+
+/*=========================================
+            LOGIN ICON
+=========================================*/
+
+.login-card .bi-person-circle{
+
+    animation:float 3s infinite;
+
+}
+
+/*=========================================
+            TABLE
+=========================================*/
+
+.table tbody tr{
+
+    transition:.3s;
+
+}
+
+.table tbody tr:hover{
+
+    transform:scale(1.01);
+
+}
+
+/*=========================================
+            RESPONSIVE
+=========================================*/
+
+@media(max-width:992px){
+
+.hero{
+
+min-height:85vh;
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:2.8rem;
+
+}
+
+.page-header{
+
+height:45vh;
+
+}
+
+}
+
+@media(max-width:768px){
+
+section{
+
+padding:60px 0;
+
+}
+
+.hero{
+
+padding-top:90px;
+
+}
+
+.hero h1{
+
+font-size:2.2rem;
+
+}
+
+.hero p{
+
+font-size:1rem;
+
+}
+
+.page-header{
+
+height:40vh;
+
+}
+
+.counter{
+
+font-size:2.2rem;
+
+}
+
+footer{
+
+text-align:center;
+
+}
+
+footer .text-md-end{
+
+text-align:center!important;
+
+margin-top:20px;
+
+}
+
+.login-card{
+
+padding:35px!important;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.navbar-brand{
+
+font-size:1.3rem;
+
+}
+
+.hero h1{
+
+font-size:1.9rem;
+
+}
+
+.display-4{
+
+font-size:2rem;
+
+}
+
+.glass-card{
+
+padding:20px!important;
+
+}
+
+.btn-lg{
+
+font-size:1rem;
+
+padding:12px 25px;
+
+}
+
+.table{
+
+font-size:.9rem;
+
+}
+
+}
+
+/*=========================================
+            CUSTOM SCROLLBAR
+=========================================*/
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#edf5ed;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#2e7d32;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#1b5e20;
+
+}
+
+/*=========================================
+            SELECTION
+=========================================*/
+
+::selection{
+
+background:#2e7d32;
+
+color:#fff;
+
+}

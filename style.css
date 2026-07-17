@@ -1,0 +1,3119 @@
+/*=========================================================
+ AgroVision - Smart Agriculture Information Portal
+ Global Styles
+=========================================================*/
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*========================
+ CSS VARIABLES
+=========================*/
+
+:root{
+
+    --primary:#2E7D32;
+    --secondary:#43A047;
+    --accent:#81C784;
+    --dark:#0f172a;
+    --light:#f8fafc;
+    --white:#ffffff;
+
+    --glass:rgba(255,255,255,.12);
+    --glass-border:rgba(255,255,255,.25);
+
+    --shadow:0 15px 40px rgba(0,0,0,.15);
+
+    --radius:18px;
+
+    --transition:.35s ease;
+
+}
+
+/*========================
+ RESET
+=========================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:#f6faf6;
+    color:#222;
+    overflow-x:hidden;
+    line-height:1.7;
+
+}
+
+img{
+
+    max-width:100%;
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+    transition:var(--transition);
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+section{
+
+    padding:90px 0;
+
+}
+
+/*========================
+ CUSTOM SCROLLBAR
+=========================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#edf7ed;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(var(--primary),var(--secondary));
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#1b5e20;
+
+}
+
+/*========================
+ LOADER
+=========================*/
+
+#loader{
+
+    position:fixed;
+    inset:0;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    z-index:99999;
+
+}
+
+.loader-circle{
+
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    border:6px solid #d7ead8;
+    border-top:6px solid var(--primary);
+    animation:spin 1s linear infinite;
+
+}
+
+#loader h3{
+
+    margin-top:20px;
+    color:var(--primary);
+    font-weight:700;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/*========================
+ BACK TO TOP
+=========================*/
+
+#topBtn{
+
+    position:fixed;
+    right:25px;
+    bottom:25px;
+
+    width:52px;
+    height:52px;
+
+    border:none;
+    border-radius:50%;
+
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:#fff;
+
+    display:none;
+
+    box-shadow:var(--shadow);
+
+    z-index:999;
+
+    transition:.3s;
+
+}
+
+#topBtn:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/*========================
+ GLASS NAVBAR
+=========================*/
+
+.glass-nav{
+
+    background:rgba(20,40,20,.18);
+    backdrop-filter:blur(14px);
+    transition:.4s;
+
+}
+
+.glass-nav.scrolled{
+
+    background:rgba(18,48,22,.92);
+
+}
+
+.navbar-brand{
+
+    font-size:1.6rem;
+
+}
+
+.nav-link{
+
+    color:#fff !important;
+    margin-left:18px;
+    position:relative;
+    font-weight:500;
+
+}
+
+.nav-link::after{
+
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+
+    width:0;
+    height:2px;
+
+    background:#7CFC00;
+
+    transition:.3s;
+
+}
+
+.nav-link:hover::after,
+.nav-link.active::after{
+
+    width:100%;
+
+}
+
+/*========================
+ HERO
+=========================*/
+
+.hero{
+
+    position:relative;
+    min-height:100vh;
+
+    background:url("../images/hero.jpg") center/cover no-repeat;
+
+    display:flex;
+    align-items:center;
+
+}
+
+.overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(rgba(0,0,0,.65),
+                               rgba(0,0,0,.55));
+
+}
+
+.hero .container{
+
+    position:relative;
+    z-index:2;
+
+}
+
+.hero-badge{
+
+    display:inline-block;
+
+    background:rgba(255,255,255,.18);
+
+    padding:10px 22px;
+
+    border-radius:50px;
+
+    backdrop-filter:blur(10px);
+
+    color:#fff;
+
+    font-weight:500;
+
+}
+
+.hero h1{
+
+    font-size:3.8rem;
+    font-weight:800;
+    line-height:1.2;
+
+}
+
+.hero p{
+
+    color:#ececec;
+    max-width:650px;
+
+}
+
+/*========================
+ GLASS CARD
+=========================*/
+
+.glass-card{
+
+    background:var(--glass);
+
+    border:1px solid var(--glass-border);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    color:#fff;
+
+}
+
+.hero-card{
+
+    padding:35px;
+
+}
+
+.hero-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:25px;
+
+}
+
+.hero-info i{
+
+    width:58px;
+    height:58px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(255,255,255,.12);
+
+    font-size:1.5rem;
+
+    color:#7CFC00;
+
+}
+
+/*========================
+ BUTTONS
+=========================*/
+
+.btn-success{
+
+    background:linear-gradient(135deg,
+                var(--primary),
+                var(--secondary));
+
+    border:none;
+
+    transition:.35s;
+
+}
+
+.btn-success:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(46,125,50,.35);
+
+}
+
+.btn-outline-light:hover{
+
+    color:#222;
+
+}
+/*=========================================================
+    FEATURES SECTION
+=========================================================*/
+
+.section-title{
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+    font-weight:700;
+    color:var(--dark);
+}
+
+.section-title p{
+    color:#666;
+    margin-top:15px;
+}
+
+.section-subtitle{
+
+    color:var(--primary);
+    font-weight:600;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-size:.9rem;
+
+}
+
+/*=========================================================
+    FEATURE CARD
+=========================================================*/
+
+.feature-card{
+
+    background:#fff;
+    border-radius:20px;
+    padding:35px 28px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    height:100%;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+}
+
+.icon-box{
+
+    width:80px;
+    height:80px;
+
+    margin:auto;
+    margin-bottom:25px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary));
+
+    color:#fff;
+
+    font-size:2rem;
+
+    transition:.4s;
+
+}
+
+.feature-card:hover .icon-box{
+
+    transform:rotate(10deg) scale(1.1);
+
+}
+
+.feature-card h4{
+
+    font-weight:700;
+    margin-bottom:15px;
+
+}
+
+.feature-card p{
+
+    color:#666;
+    font-size:.95rem;
+
+}
+
+/*=========================================================
+    ABOUT
+=========================================================*/
+
+.about-box{
+
+    background:#fff;
+
+    border-radius:14px;
+
+    padding:14px 18px;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    font-weight:500;
+
+}
+
+.about-box i{
+
+    margin-right:8px;
+
+}
+
+.about-box:hover{
+
+    transform:translateY(-5px);
+
+    background:#ecfff0;
+
+}
+
+/*=========================================================
+    STATS SECTION
+=========================================================*/
+
+.stats-section{
+
+    background:linear-gradient(rgba(20,70,30,.90),
+    rgba(20,70,30,.90)),
+
+    url("../images/stats-bg.jpg")
+    center center/cover;
+
+}
+
+.stat-card{
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    transition:.4s;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.stat-card i{
+
+    font-size:2.4rem;
+
+    color:#8ef88e;
+
+}
+
+.stat-card h2{
+
+    font-size:3rem;
+
+    margin:15px 0;
+
+    font-weight:700;
+
+}
+
+.stat-card p{
+
+    margin:0;
+
+    font-size:1.1rem;
+
+}
+
+/*=========================================================
+    SERVICES
+=========================================================*/
+
+.service-card{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:35px;
+
+    text-align:center;
+
+    height:100%;
+
+    transition:.35s;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+}
+
+.service-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+}
+
+.service-card i{
+
+    width:85px;
+    height:85px;
+
+    margin:auto auto 25px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    color:#fff;
+
+    font-size:2rem;
+
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary));
+
+}
+
+.service-card h4{
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+.service-card p{
+
+    color:#666;
+
+}
+
+/*=========================================================
+    IMAGE HOVER
+=========================================================*/
+
+.img-hover{
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+}
+
+.img-hover img{
+
+    transition:.5s;
+
+}
+
+.img-hover:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/*=========================================================
+    CARD HOVER
+=========================================================*/
+
+.card-hover{
+
+    transition:.35s;
+
+}
+
+.card-hover:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+
+}
+
+/*=========================================================
+    CTA SECTION
+=========================================================*/
+
+.cta{
+
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary));
+
+    color:#fff;
+
+    border-radius:30px;
+
+    padding:70px 40px;
+
+}
+
+.cta h2{
+
+    font-weight:700;
+
+}
+
+.cta .btn{
+
+    padding:12px 35px;
+
+    font-weight:600;
+
+}
+
+/*=========================================================
+    FOOTER
+=========================================================*/
+
+footer{
+
+    background:#122018;
+
+    color:#ddd;
+
+    padding-top:70px;
+
+}
+
+footer h4{
+
+    color:#fff;
+
+    margin-bottom:25px;
+
+}
+
+footer ul{
+
+    padding-left:0;
+
+}
+
+footer ul li{
+
+    margin-bottom:12px;
+
+}
+
+footer ul li a{
+
+    color:#ddd;
+
+}
+
+footer ul li a:hover{
+
+    color:#8ef88e;
+
+    padding-left:6px;
+
+}
+
+.social-links a{
+
+    width:45px;
+    height:45px;
+
+    display:inline-flex;
+
+    justify-content:center;
+    align-items:center;
+
+    margin-right:10px;
+
+    border-radius:50%;
+
+    background:#1d3325;
+
+    color:#fff;
+
+    transition:.35s;
+
+}
+
+.social-links a:hover{
+
+    background:var(--primary);
+
+    transform:translateY(-6px);
+
+}
+
+.footer-bottom{
+
+    border-top:1px solid rgba(255,255,255,.1);
+
+    margin-top:40px;
+
+    padding:20px 0;
+
+    text-align:center;
+
+}
+
+/*=========================================================
+    SCROLL INDICATOR
+=========================================================*/
+
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:30px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#fff;
+
+    font-size:2rem;
+
+    animation:bounce 2s infinite;
+
+}
+
+@keyframes bounce{
+
+    0%,100%{
+
+        transform:
+        translateX(-50%)
+        translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+        translateX(-50%)
+        translateY(10px);
+
+    }
+
+}
+
+/*=========================================================
+    REVEAL ANIMATION
+=========================================================*/
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:1s;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+/*=========================================================
+                    CROPS PAGE
+=========================================================*/
+
+.page-hero{
+
+    position:relative;
+    min-height:60vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background-size:cover;
+    background-position:center;
+
+    color:#fff;
+
+}
+
+.page-hero::before{
+
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.55)
+    );
+
+}
+
+.page-hero .container{
+
+    position:relative;
+    z-index:2;
+
+}
+
+.page-hero h1{
+
+    font-size:3.5rem;
+    font-weight:700;
+
+}
+
+.page-hero p{
+
+    font-size:1.1rem;
+
+    color:#eee;
+
+}
+
+/*=========================================================
+                    SEARCH BOX
+=========================================================*/
+
+.search-box{
+
+    max-width:700px;
+    margin:40px auto;
+
+}
+
+.search-box .form-control{
+
+    height:60px;
+
+    border-radius:50px;
+
+    border:none;
+
+    padding-left:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.10);
+
+}
+
+.search-box .form-control:focus{
+
+    box-shadow:0 0 0 .2rem rgba(46,125,50,.25);
+
+}
+
+.search-box button{
+
+    border-radius:50px;
+
+    padding:0 35px;
+
+}
+
+/*=========================================================
+                CATEGORY BUTTONS
+=========================================================*/
+
+.category-btn{
+
+    border:none;
+
+    padding:12px 25px;
+
+    border-radius:50px;
+
+    background:#fff;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+    margin:5px;
+
+    font-weight:500;
+
+}
+
+.category-btn:hover,
+.category-btn.active{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:#fff;
+
+}
+
+/*=========================================================
+                    CROP CARD
+=========================================================*/
+
+.crop-card{
+
+    border:none;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    background:#fff;
+
+    height:100%;
+
+}
+
+.crop-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 25px 50px rgba(0,0,0,.18);
+
+}
+
+.crop-card img{
+
+    height:230px;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.crop-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.crop-card .card-body{
+
+    padding:25px;
+
+}
+
+.crop-card h4{
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+.crop-card p{
+
+    color:#666;
+
+}
+
+.crop-info{
+
+    margin-top:18px;
+
+}
+
+.crop-info li{
+
+    margin-bottom:10px;
+
+    color:#555;
+
+    font-size:.95rem;
+
+}
+
+.crop-info i{
+
+    color:var(--primary);
+
+    margin-right:8px;
+
+}
+
+.crop-card .btn{
+
+    width:100%;
+
+    margin-top:18px;
+
+}
+
+/*=========================================================
+                COMPARISON TABLE
+=========================================================*/
+
+.table-modern{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+
+}
+
+.table-modern thead{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:#fff;
+
+}
+
+.table-modern th{
+
+    border:none;
+
+    padding:18px;
+
+}
+
+.table-modern td{
+
+    padding:18px;
+
+    vertical-align:middle;
+
+}
+
+.table-modern tbody tr:hover{
+
+    background:#f4fff4;
+
+}
+
+/*=========================================================
+                CROP CALENDAR
+=========================================================*/
+
+.calendar-box{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+}
+
+.calendar-box table{
+
+    margin-bottom:0;
+
+}
+
+.calendar-box th{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+.calendar-box td{
+
+    text-align:center;
+
+}
+
+/*=========================================================
+                SMART TIPS
+=========================================================*/
+
+.tip-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    transition:.35s;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+    height:100%;
+
+}
+
+.tip-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.tip-card i{
+
+    font-size:2.2rem;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.tip-card h5{
+
+    font-weight:600;
+
+}
+
+/*=========================================================
+                    FAQ
+=========================================================*/
+
+.accordion-item{
+
+    border:none;
+
+    margin-bottom:15px;
+
+    border-radius:15px !important;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.accordion-button{
+
+    font-weight:600;
+
+}
+
+.accordion-button:not(.collapsed){
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+.accordion-button:focus{
+
+    box-shadow:none;
+
+}
+
+/*=========================================================
+                    BADGES
+=========================================================*/
+
+.badge-green{
+
+    background:#e8f5e9;
+
+    color:var(--primary);
+
+    padding:8px 15px;
+
+    border-radius:50px;
+
+    font-size:.8rem;
+
+    font-weight:600;
+
+}
+
+/*=========================================================
+                SECTION SPACING
+=========================================================*/
+
+.section-padding{
+
+    padding:90px 0;
+
+}
+/*=========================================================
+                    MARKET PAGE
+=========================================================*/
+
+/* Hero Background */
+
+.market-hero{
+    background:url("../images/market-bg.jpg") center center/cover no-repeat;
+}
+
+/*==============================
+        Search Section
+===============================*/
+
+.market-search{
+    margin-top:-40px;
+    position:relative;
+    z-index:10;
+}
+
+.market-search .search-box{
+    background:#fff;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+}
+
+.market-search .form-control{
+    height:58px;
+    border-radius:50px;
+    padding-left:22px;
+    border:1px solid #ddd;
+}
+
+.market-search .form-control:focus{
+    border-color:var(--primary);
+    box-shadow:0 0 0 .2rem rgba(46,125,50,.15);
+}
+
+.market-search .btn{
+    border-radius:50px;
+    padding:12px 35px;
+}
+
+/*==============================
+      Market Price Table
+===============================*/
+
+.market-table{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.market-table table{
+
+    margin-bottom:0;
+
+}
+
+.market-table thead{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:#fff;
+
+}
+
+.market-table th{
+
+    padding:18px;
+    border:none;
+
+}
+
+.market-table td{
+
+    padding:16px;
+    vertical-align:middle;
+
+}
+
+.market-table tbody tr{
+
+    transition:.3s;
+
+}
+
+.market-table tbody tr:hover{
+
+    background:#f5fff5;
+
+}
+
+.price-up{
+
+    color:#198754;
+    font-weight:600;
+
+}
+
+.price-down{
+
+    color:#dc3545;
+    font-weight:600;
+
+}
+
+.availability{
+
+    padding:6px 15px;
+    border-radius:30px;
+    font-size:.8rem;
+    font-weight:600;
+}
+
+.available{
+
+    background:#d1f7dc;
+    color:#198754;
+
+}
+
+.low-stock{
+
+    background:#fff3cd;
+    color:#856404;
+
+}
+
+.out-stock{
+
+    background:#f8d7da;
+    color:#842029;
+
+}
+
+/*==============================
+     Trending Crop Cards
+===============================*/
+
+.trending-card{
+
+    border:none;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    background:#fff;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.trending-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+}
+
+.trending-card img{
+
+    height:220px;
+    object-fit:cover;
+    transition:.5s;
+
+}
+
+.trending-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.trending-card .card-body{
+
+    padding:25px;
+
+}
+
+.trending-card h5{
+
+    color:var(--primary);
+    font-weight:700;
+
+}
+
+.trending-card .badge{
+
+    border-radius:30px;
+    padding:8px 15px;
+
+}
+
+/*==============================
+      Today's Highlights
+===============================*/
+
+.highlight-box{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.highlight-box:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.highlight-box i{
+
+    width:70px;
+    height:70px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    margin-bottom:20px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:#fff;
+
+    font-size:2rem;
+
+}
+
+.highlight-box h4{
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.highlight-box p{
+
+    color:#666;
+
+}
+
+/*==============================
+      Agricultural News
+===============================*/
+
+.news-card{
+
+    background:#fff;
+
+    border:none;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.news-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.news-card img{
+
+    height:230px;
+    object-fit:cover;
+    transition:.5s;
+
+}
+
+.news-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.news-card .card-body{
+
+    padding:25px;
+
+}
+
+.news-card small{
+
+    color:#888;
+
+}
+
+.news-card h5{
+
+    font-weight:700;
+
+    margin:15px 0;
+
+}
+
+.news-card a{
+
+    color:var(--primary);
+    font-weight:600;
+
+}
+
+/*==============================
+      Price Trend Cards
+===============================*/
+
+.trend-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.trend-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.trend-card i{
+
+    font-size:2.4rem;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.trend-card h3{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+/*==============================
+      Market Statistics
+===============================*/
+
+.market-stat{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:#fff;
+
+    border-radius:22px;
+
+    padding:35px;
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.market-stat:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.market-stat h2{
+
+    font-size:2.8rem;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.market-stat p{
+
+    margin:0;
+
+    font-size:1rem;
+
+}
+
+/*==============================
+          CTA Banner
+===============================*/
+
+.market-cta{
+
+    background:linear-gradient(
+        rgba(25,90,40,.88),
+        rgba(25,90,40,.88)
+    ),
+    url("../images/market-cta.jpg") center/cover;
+
+    color:#fff;
+
+    border-radius:30px;
+
+    padding:80px 40px;
+
+    text-align:center;
+
+}
+
+.market-cta h2{
+
+    font-size:2.5rem;
+
+    font-weight:700;
+
+}
+
+.market-cta p{
+
+    max-width:700px;
+
+    margin:20px auto;
+
+    color:#eee;
+
+}
+
+.market-cta .btn{
+
+    padding:14px 40px;
+
+    border-radius:50px;
+
+}
+/*=========================================================
+                GOVERNMENT SCHEMES PAGE
+=========================================================*/
+
+/* Hero Banner */
+
+.schemes-hero{
+    background: url("../images/schemes-bg.jpg") center center/cover no-repeat;
+}
+
+/*==============================
+        Search Section
+===============================*/
+
+.scheme-search{
+    margin-top:-40px;
+    position:relative;
+    z-index:10;
+}
+
+.scheme-search .search-box{
+    background:#fff;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+.scheme-search .form-control{
+    height:58px;
+    border-radius:50px;
+    border:1px solid #ddd;
+    padding-left:20px;
+}
+
+.scheme-search .form-control:focus{
+    border-color:var(--primary);
+    box-shadow:0 0 0 .2rem rgba(46,125,50,.15);
+}
+
+/*==============================
+        Filter Buttons
+===============================*/
+
+.filter-buttons{
+    text-align:center;
+    margin:40px 0;
+}
+
+.filter-buttons .btn{
+
+    margin:8px;
+
+    border-radius:50px;
+
+    padding:12px 28px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.filter-buttons .btn-success{
+
+    box-shadow:0 10px 25px rgba(46,125,50,.25);
+
+}
+
+/*==============================
+        Scheme Cards
+===============================*/
+
+.scheme-card{
+
+    background:#fff;
+
+    border:none;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.scheme-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+}
+
+.scheme-card .card-body{
+
+    padding:28px;
+
+}
+
+.scheme-icon{
+
+    width:75px;
+    height:75px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary));
+
+    color:#fff;
+
+    font-size:2rem;
+
+    margin-bottom:20px;
+
+}
+
+.scheme-card h4{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+.scheme-card p{
+
+    color:#666;
+
+}
+
+.scheme-info{
+
+    margin-top:20px;
+
+}
+
+.scheme-info li{
+
+    margin-bottom:10px;
+
+    color:#555;
+
+}
+
+.scheme-info i{
+
+    color:var(--primary);
+
+    margin-right:8px;
+
+}
+
+.scheme-card .btn{
+
+    margin-top:20px;
+
+    width:100%;
+
+}
+
+/*==============================
+      Popular Schemes
+===============================*/
+
+.popular-scheme{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary));
+
+    color:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.popular-scheme:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.popular-scheme i{
+
+    font-size:2.6rem;
+
+    margin-bottom:20px;
+
+}
+
+.popular-scheme h4{
+
+    font-weight:700;
+
+}
+
+.popular-scheme p{
+
+    opacity:.95;
+
+}
+
+/*==============================
+      Useful Documents
+===============================*/
+
+.document-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.document-card:hover{
+
+    transform:translateX(8px);
+
+}
+
+.document-icon{
+
+    width:60px;
+    height:60px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#eaf8eb;
+
+    color:var(--primary);
+
+    font-size:1.8rem;
+
+}
+
+/*==============================
+      Government Helpline
+===============================*/
+
+.helpline-box{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.helpline-box:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.helpline-box i{
+
+    width:80px;
+    height:80px;
+
+    margin:auto;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary));
+
+    color:#fff;
+
+    font-size:2rem;
+
+    margin-bottom:20px;
+
+}
+
+.helpline-box h4{
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+.helpline-number{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    color:#198754;
+
+}
+
+/*==============================
+            FAQ
+===============================*/
+
+.scheme-faq .accordion-button{
+
+    font-weight:600;
+
+}
+
+.scheme-faq .accordion-button:not(.collapsed){
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+.scheme-faq .accordion-item{
+
+    border:none;
+
+    margin-bottom:15px;
+
+    border-radius:18px !important;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+/*==============================
+        CTA Section
+===============================*/
+
+.scheme-cta{
+
+    background:
+    linear-gradient(
+        rgba(22,75,30,.88),
+        rgba(22,75,30,.88)),
+    url("../images/farmers.jpg")
+    center/cover;
+
+    color:#fff;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    padding:80px 35px;
+
+}
+
+.scheme-cta h2{
+
+    font-size:2.5rem;
+
+    font-weight:700;
+
+}
+
+.scheme-cta p{
+
+    max-width:720px;
+
+    margin:20px auto;
+
+    color:#eee;
+
+}
+
+.scheme-cta .btn{
+
+    border-radius:50px;
+
+    padding:14px 40px;
+
+}
+
+/*==============================
+      Utility Badge
+===============================*/
+
+.scheme-badge{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    background:#e8f5e9;
+
+    color:var(--primary);
+
+    border-radius:30px;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+}
+/*=========================================================
+                LOGIN / REGISTER PAGE
+=========================================================*/
+
+/* Hero Background */
+
+.login-hero{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.60),
+        rgba(0,0,0,.60)
+    ),
+    url("../images/login-bg.jpg") center/cover no-repeat;
+
+    display:flex;
+    align-items:center;
+
+}
+
+/*==============================
+        Split Layout
+===============================*/
+
+.auth-section{
+
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+
+}
+
+.auth-left{
+
+    color:#fff;
+
+    padding:60px;
+
+}
+
+.auth-left h1{
+
+    font-size:3.2rem;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+}
+
+.auth-left p{
+
+    margin:25px 0;
+
+    color:#f1f1f1;
+
+    font-size:1.05rem;
+
+}
+
+.auth-features{
+
+    margin-top:40px;
+
+}
+
+.auth-features li{
+
+    margin-bottom:15px;
+
+    font-size:1rem;
+
+}
+
+.auth-features i{
+
+    color:#8ef88e;
+
+    margin-right:10px;
+
+}
+
+/*==============================
+        Glass Card
+===============================*/
+
+.auth-card{
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:25px;
+
+    padding:45px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.20);
+
+}
+
+.auth-card h2{
+
+    text-align:center;
+
+    font-weight:700;
+
+    color:#fff;
+
+    margin-bottom:30px;
+
+}
+
+/*==============================
+        Form Groups
+===============================*/
+
+.form-group{
+
+    margin-bottom:20px;
+
+    position:relative;
+
+}
+
+.form-control{
+
+    height:56px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(255,255,255,.30);
+
+    background:rgba(255,255,255,.15);
+
+    color:#fff;
+
+    padding-left:18px;
+
+}
+
+.form-control::placeholder{
+
+    color:#ddd;
+
+}
+
+.form-control:focus{
+
+    background:rgba(255,255,255,.18);
+
+    color:#fff;
+
+    border-color:#8ef88e;
+
+    box-shadow:none;
+
+}
+
+/* Textarea */
+
+textarea.form-control{
+
+    height:110px;
+
+    resize:none;
+
+    padding-top:15px;
+
+}
+
+/*==============================
+        Password Toggle
+===============================*/
+
+.password-wrapper{
+
+    position:relative;
+
+}
+
+.password-toggle{
+
+    position:absolute;
+
+    right:18px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    cursor:pointer;
+
+    color:#fff;
+
+    font-size:1.1rem;
+
+}
+
+/*==============================
+        Remember Row
+===============================*/
+
+.form-options{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+    color:#fff;
+
+    font-size:.95rem;
+
+}
+
+.form-options a{
+
+    color:#b7ffb7;
+
+}
+
+.form-options a:hover{
+
+    text-decoration:underline;
+
+}
+
+/*==============================
+        Buttons
+===============================*/
+
+.auth-btn{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:#fff;
+
+    transition:.35s;
+
+}
+
+.auth-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 28px rgba(46,125,50,.35);
+
+}
+
+/*==============================
+        Switch Link
+===============================*/
+
+.switch-form{
+
+    text-align:center;
+
+    margin-top:25px;
+
+    color:#fff;
+
+}
+
+.switch-form a{
+
+    color:#9dff9d;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+.switch-form a:hover{
+
+    text-decoration:underline;
+
+}
+
+/*==============================
+        Form Animation
+===============================*/
+
+.form-box{
+
+    transition:.5s ease;
+
+}
+
+.register-form{
+
+    display:none;
+
+    animation:fadeIn .5s ease;
+
+}
+
+.login-form{
+
+    display:block;
+
+    animation:fadeIn .5s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==============================
+        Alerts
+===============================*/
+
+.success-message{
+
+    display:none;
+
+    background:#d1f7dc;
+
+    color:#198754;
+
+    border-radius:10px;
+
+    padding:12px;
+
+    margin-bottom:18px;
+
+}
+
+.error-message{
+
+    display:none;
+
+    background:#f8d7da;
+
+    color:#842029;
+
+    border-radius:10px;
+
+    padding:12px;
+
+    margin-bottom:18px;
+
+}
+
+/*==============================
+        Validation
+===============================*/
+
+.is-valid{
+
+    border:2px solid #4CAF50 !important;
+
+}
+
+.is-invalid{
+
+    border:2px solid #dc3545 !important;
+
+}
+
+.invalid-feedback{
+
+    color:#ffc9c9;
+
+    font-size:.9rem;
+
+}
+
+/*==============================
+        Social Login
+===============================*/
+
+.social-login{
+
+    margin-top:25px;
+
+    text-align:center;
+
+}
+
+.social-login p{
+
+    color:#eee;
+
+    margin-bottom:15px;
+
+}
+
+.social-icons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+}
+
+.social-icons a{
+
+    width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+    color:#fff;
+
+    transition:.3s;
+
+    font-size:1.2rem;
+
+}
+
+.social-icons a:hover{
+
+    background:var(--primary);
+
+    transform:translateY(-5px);
+
+}
+/*=========================================================
+                RESPONSIVE NAVBAR
+=========================================================*/
+
+.navbar{
+
+    transition:all .35s ease;
+
+}
+
+.navbar-brand{
+
+    font-size:1.6rem;
+    font-weight:700;
+
+}
+
+.navbar-toggler{
+
+    border:none;
+    box-shadow:none !important;
+
+}
+
+.navbar-toggler:focus{
+
+    box-shadow:none;
+
+}
+
+.navbar-collapse{
+
+    transition:.35s;
+
+}
+
+.navbar-nav .nav-link{
+
+    font-weight:500;
+    letter-spacing:.3px;
+
+}
+
+@media (max-width:991px){
+
+    .glass-nav{
+
+        background:rgba(18,48,22,.96);
+
+    }
+
+    .navbar-collapse{
+
+        margin-top:18px;
+
+        background:rgba(20,50,25,.96);
+
+        border-radius:16px;
+
+        padding:18px;
+
+    }
+
+    .navbar-nav{
+
+        text-align:center;
+
+    }
+
+    .navbar-nav .nav-item{
+
+        margin:10px 0;
+
+    }
+
+    .navbar-nav .btn{
+
+        width:100%;
+
+        margin-top:12px;
+
+    }
+
+}
+
+/*=========================================================
+                LOGIN RESPONSIVE
+=========================================================*/
+
+@media (max-width:991px){
+
+    .auth-section{
+
+        padding:60px 0;
+
+        min-height:auto;
+
+    }
+
+    .auth-left{
+
+        text-align:center;
+
+        padding:20px;
+
+        margin-bottom:35px;
+
+    }
+
+    .auth-left h1{
+
+        font-size:2.5rem;
+
+    }
+
+    .auth-left p{
+
+        max-width:650px;
+
+        margin:20px auto;
+
+    }
+
+    .auth-features{
+
+        display:inline-block;
+
+        text-align:left;
+
+    }
+
+    .auth-card{
+
+        padding:35px 25px;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .auth-left h1{
+
+        font-size:2rem;
+
+    }
+
+    .auth-card{
+
+        padding:25px 20px;
+
+        border-radius:18px;
+
+    }
+
+    .auth-card h2{
+
+        font-size:1.8rem;
+
+    }
+
+    .form-control{
+
+        height:52px;
+
+    }
+
+}
+
+/*=========================================================
+                FOOTER RESPONSIVE
+=========================================================*/
+
+footer{
+
+    overflow:hidden;
+
+}
+
+.footer-links{
+
+    padding-left:0;
+
+}
+
+.footer-links li{
+
+    margin-bottom:12px;
+
+}
+
+.footer-links a{
+
+    color:#d9d9d9;
+
+    transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+    color:#8ef88e;
+
+    padding-left:6px;
+
+}
+
+.footer-logo{
+
+    font-size:1.8rem;
+
+    font-weight:700;
+
+    color:#fff;
+
+}
+
+.footer-contact p{
+
+    margin-bottom:12px;
+
+}
+
+.footer-contact i{
+
+    color:#8ef88e;
+
+    margin-right:10px;
+
+}
+
+.footer-bottom{
+
+    text-align:center;
+
+    font-size:.95rem;
+
+}
+
+@media (max-width:768px){
+
+    footer{
+
+        text-align:center;
+
+    }
+
+    .social-links{
+
+        justify-content:center;
+
+        display:flex;
+
+        flex-wrap:wrap;
+
+    }
+
+    .footer-contact{
+
+        margin-top:25px;
+
+    }
+
+}
+
+/*=========================================================
+                GENERAL RESPONSIVE
+=========================================================*/
+
+@media (max-width:1200px){
+
+    .hero h1{
+
+        font-size:3.2rem;
+
+    }
+
+    .page-hero h1{
+
+        font-size:3rem;
+
+    }
+
+}
+
+@media (max-width:992px){
+
+    section{
+
+        padding:70px 0;
+
+    }
+
+    .hero{
+
+        text-align:center;
+
+    }
+
+    .hero p{
+
+        margin:auto;
+
+    }
+
+    .hero-card{
+
+        margin-top:40px;
+
+    }
+
+    .section-title h2{
+
+        font-size:2.2rem;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .hero{
+
+        min-height:90vh;
+
+    }
+
+    .hero h1{
+
+        font-size:2.5rem;
+
+    }
+
+    .page-hero{
+
+        min-height:45vh;
+
+    }
+
+    .page-hero h1{
+
+        font-size:2.3rem;
+
+    }
+
+    .section-title h2{
+
+        font-size:2rem;
+
+    }
+
+    .cta{
+
+        padding:50px 25px;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .hero h1{
+
+        font-size:2rem;
+
+    }
+
+    .hero p{
+
+        font-size:.95rem;
+
+    }
+
+    .page-hero h1{
+
+        font-size:1.9rem;
+
+    }
+
+    .btn-lg{
+
+        width:100%;
+
+        margin-bottom:15px;
+
+    }
+
+    .search-box{
+
+        margin:25px auto;
+
+    }
+
+}

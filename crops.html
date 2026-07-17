@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Crops | AgroVision</title>
+
+    <!-- Bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+<link rel="stylesheet" href="styles.css">
+    <style>
+       body {
+            background:
+                linear-gradient(rgba(139, 171, 154, 0.82),
+                    rgba(16, 44, 20, 0.78))}
+
+.crop-bg{
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.45)),
+    url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1800&q=80");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+.page-header{
+    min-height:60vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    color:#fff;
+}
+
+.page-content{
+    position:relative;
+    z-index:2;
+}
+
+.page-content h1{
+    color:#fff;
+    font-size:3.2rem;
+    font-weight:700;
+}
+
+.page-content p{
+    color:#f2f2f2;
+}
+
+/*=========================================
+            SEARCH BOX
+=========================================*/
+
+#cropSearch{
+
+    height:60px;
+
+    border:none;
+
+    border-radius:50px;
+
+    padding:0 25px;
+
+    font-size:18px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+#cropSearch:focus{
+
+    box-shadow:0 0 0 .25rem rgba(46,125,50,.25);
+
+}
+
+/*=========================================
+            CATEGORY CARDS
+=========================================*/
+
+.glass-card{
+
+    background:rgba(255,255,255,.20);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.4s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+.glass-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
+
+}
+
+.glass-card i{
+
+    transition:.4s;
+
+}
+
+.glass-card:hover i{
+
+    transform:scale(1.15);
+
+}
+
+/*=========================================
+            CROP CARD
+=========================================*/
+
+.crop-card img{
+
+    height:220px;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.crop-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.crop-card .card-body{
+
+    padding:25px;
+
+}
+
+.crop-card h4{
+
+    color:#2e7d32;
+
+    font-weight:700;
+
+}
+
+.crop-card p{
+
+    color:#666;
+
+    min-height:70px;
+
+}
+
+.crop-card ul{
+
+    padding-left:18px;
+
+}
+
+.crop-card li{
+
+    margin-bottom:8px;
+
+    color:#555;
+
+}
+
+.crop-card .badge{
+
+    font-size:.8rem;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+}
+
+.crop-card .btn{
+
+    margin-top:15px;
+
+}
+
+/*=========================================
+            COUNTER
+=========================================*/
+
+.counter-section{
+
+    background:linear-gradient(135deg,#2e7d32,#1b5e20);
+
+    color:#fff;
+
+}
+
+.counter{
+
+    font-size:3rem;
+
+    font-weight:700;
+
+}
+
+.counter-section p{
+
+    font-size:18px;
+
+}
+
+/*=========================================
+            TABLE
+=========================================*/
+
+.table{
+
+    margin:0;
+
+}
+
+.table th{
+
+    background:#2e7d32 !important;
+
+    color:#fff;
+
+    text-align:center;
+
+}
+
+.table td{
+
+    text-align:center;
+
+    vertical-align:middle;
+
+}
+
+.table-hover tbody tr:hover{
+
+    background:#eef8ef;
+
+}
+/*=========================================
+        SEASONAL CALENDAR
+=========================================*/
+
+.season-card{
+
+    text-align:center;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:#fff;
+
+    transition:.4s;
+
+    height:100%;
+
+}
+
+.season-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+.season-card h4{
+
+    color:#2e7d32;
+
+    margin-bottom:20px;
+
+    font-weight:700;
+
+}
+
+.season-card ul{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+.season-card li{
+
+    padding:10px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+.season-card li:last-child{
+
+    border-bottom:none;
+
+}
+
+/*=========================================
+        SMART FARMING
+=========================================*/
+
+.tip-card{
+
+    text-align:center;
+
+    padding:35px 25px;
+
+    border-radius:20px;
+
+    background:#fff;
+
+    transition:.4s;
+
+    height:100%;
+
+}
+
+.tip-card:hover{
+
+    transform:translateY(-10px);
+
+    background:#2e7d32;
+
+    color:#fff;
+
+}
+
+.tip-card:hover h4{
+
+    color:#fff;
+
+}
+
+.tip-card:hover i{
+
+    color:#fff !important;
+
+}
+
+.tip-card i{
+
+    font-size:55px;
+
+    margin-bottom:20px;
+
+    color:#2e7d32;
+
+}
+
+/*=========================================
+        FAQ
+=========================================*/
+
+.accordion-item{
+
+    border:none;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    margin-bottom:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.accordion-button{
+
+    font-weight:600;
+
+}
+
+.accordion-button:not(.collapsed){
+
+    background:#e8f5e9;
+
+    color:#2e7d32;
+
+}
+
+/*=========================================
+        CTA SECTION
+=========================================*/
+
+.cta-section{
+
+    background:
+
+    linear-gradient(rgba(18,80,36,.88),rgba(18,80,36,.88)),
+
+    url("https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1800&q=80");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+.cta-section h2{
+
+    color:#fff;
+
+}
+
+.cta-section p{
+
+    color:#f3f3f3;
+
+}
+
+.cta-section .btn{
+
+    margin-top:15px;
+
+}
+
+/*=========================================
+        FOOTER
+=========================================*/
+
+footer{
+
+    background:#163622;
+
+    color:#fff;
+
+    padding:60px 0 20px;
+
+}
+
+footer h4,
+
+footer h5{
+
+    color:#fff;
+
+}
+
+footer p{
+
+    color:#ddd;
+
+}
+
+footer ul{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+footer ul li{
+
+    margin-bottom:10px;
+
+}
+
+footer ul li a{
+
+    color:#ddd;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+footer ul li a:hover{
+
+    color:#7dff9f;
+
+    padding-left:5px;
+
+}
+
+footer i{
+
+    transition:.3s;
+
+}
+
+footer i:hover{
+
+    color:#7dff9f;
+
+    transform:translateY(-4px);
+
+}
+
+/*=========================================
+        ANIMATIONS
+=========================================*/
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.glass-card{
+
+    animation:fadeUp .8s ease;
+
+}
+
+/*=========================================
+        SCROLL REVEAL
+=========================================*/
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:.8s;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/*=========================================
+        BUTTON EFFECT
+=========================================*/
+
+.btn{
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/*=========================================
+        RESPONSIVE
+=========================================*/
+
+@media(max-width:992px){
+
+.page-content h1{
+
+font-size:2.7rem;
+
+}
+
+.counter{
+
+font-size:2.5rem;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.page-header{
+
+min-height:45vh;
+
+}
+
+.page-content h1{
+
+font-size:2.2rem;
+
+}
+
+.page-content p{
+
+font-size:1rem;
+
+}
+
+.counter{
+
+font-size:2rem;
+
+}
+
+.crop-card img{
+
+height:200px;
+
+}
+
+.season-card,
+
+.tip-card{
+
+padding:25px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.page-content h1{
+
+font-size:1.8rem;
+
+}
+
+#cropSearch{
+
+height:50px;
+
+font-size:15px;
+
+}
+
+.crop-card img{
+
+height:180px;
+
+}
+
+.table{
+
+font-size:14px;
+
+}
+
+}
+    </style>
+
+</head>
+
+<body>
+
+    <!--==================== NAVBAR ====================-->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="index.html">
+            <i class="bi bi-tree-fill text-success"></i>
+            AgroVision
+        </a>
+
+        <button class="navbar-toggler" data-bs-toggle="collapse"
+            data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="crops.html">Crops</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="market.html">Market</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="schemes.html">Schemes</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="tips.html">Tips</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+
+                <li class="nav-item ms-lg-3">
+                    <a class="btn btn-success px-4 rounded-pill"
+                        href="login.html">
+                        Login
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+    <!--==================== HERO ====================-->
+
+    <section class="page-header crop-bg">
+
+        <div class="overlay"></div>
+
+        <div class="container page-content text-center">
+
+            <h1 class="display-3 fw-bold">
+
+                Explore Agricultural Crops
+
+            </h1>
+
+            <p class="lead">
+
+                Discover crop information, growing seasons, soil requirements,
+                irrigation methods and cultivation techniques.
+
+            </p>
+
+            <div class="row justify-content-center mt-4">
+
+                <div class="col-lg-6">
+
+                    <input
+                        type="text"
+                        id="cropSearch"
+                        class="form-control form-control-lg"
+                        placeholder="Search crops...">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--==================== CATEGORIES ====================-->
+
+    <section class="py-5">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <h2 class="fw-bold">
+
+                    Crop Categories
+
+                </h2>
+
+                <p class="text-muted">
+
+                    Explore different types of crops cultivated across India.
+
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-3">
+
+                    <div class="glass-card p-4 text-center h-100">
+
+                        <i class="bi bi-flower1 display-3 text-success"></i>
+
+                        <h4 class="mt-3">
+
+                            Food Crops
+
+                        </h4>
+
+                        <p>
+
+                            Rice, Wheat, Maize
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <div class="glass-card p-4 text-center h-100">
+
+                        <i class="bi bi-cash-stack display-3 text-success"></i>
+
+                        <h4 class="mt-3">
+
+                            Cash Crops
+
+                        </h4>
+
+                        <p>
+
+                            Cotton, Sugarcane, Tea
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <div class="glass-card p-4 text-center h-100">
+
+                        <i class="bi bi-tree display-3 text-success"></i>
+
+                        <h4 class="mt-3">
+
+                            Plantation
+
+                        </h4>
+
+                        <p>
+
+                            Coffee, Rubber, Coconut
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <div class="glass-card p-4 text-center h-100">
+
+                        <i class="bi bi-apple display-3 text-success"></i>
+
+                        <h4 class="mt-3">
+
+                            Horticulture
+
+                        </h4>
+
+                        <p>
+
+                            Mango, Banana, Tomato
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--==================== FEATURED CROPS ====================-->
+
+    <section class="pb-5">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <h2 class="fw-bold">
+
+                    Featured Crops
+
+                </h2>
+
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Rice -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="glass-card crop-card h-100">
+
+                        <img src="rice.jpg"
+                            alt="Rice">
+
+                        <div class="card-body">
+
+                            <span class="badge bg-success mb-2">
+
+                                High Yield
+
+                            </span>
+
+                            <h4>🌾 Rice</h4>
+
+                            <p>
+
+                                India's staple food crop requiring abundant water.
+
+                            </p>
+
+                            <ul>
+
+                                <li>Season : Kharif</li>
+                                <li>Soil : Clay</li>
+                                <li>Water : High</li>
+                                <li>Duration : 120 Days</li>
+
+                            </ul>
+
+                            
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Wheat -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="glass-card crop-card h-100">
+
+                        <img src="wheat.jpg"
+                            alt="Wheat">
+
+                        <div class="card-body">
+
+                            <span class="badge bg-warning text-dark mb-2">
+
+                                Popular
+
+                            </span>
+
+                            <h4>🌾 Wheat</h4>
+
+                            <p>
+
+                                Major Rabi crop suitable for cooler climates.
+
+                            </p>
+
+                            <ul>
+
+                                <li>Season : Rabi</li>
+                                <li>Soil : Loamy</li>
+                                <li>Water : Medium</li>
+                                <li>Duration : 110 Days</li>
+
+                            </ul>
+
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Cotton -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="glass-card crop-card h-100">
+
+                        <img src="cotton.jpg"
+     alt="Cotton"
+     class="img-fluid">
+
+                        <div class="card-body">
+
+                            <span class="badge bg-primary mb-2">
+
+                                Export
+
+                            </span>
+
+                            <h4>☁ Cotton</h4>
+
+                            <p>
+
+                                Important commercial crop grown in black soil.
+
+                            </p>
+
+                            <ul>
+
+                                <li>Season : Kharif</li>
+                                <li>Soil : Black</li>
+                                <li>Water : Medium</li>
+                                <li>Duration : 180 Days</li>
+
+                            </ul>
+
+                            
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Sugarcane -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="glass-card crop-card h-100">
+
+                        <img src="sugarcane.png"
+                            alt="Sugarcane">
+
+                        <div class="card-body">
+
+                            <span class="badge bg-danger mb-2">
+
+                                Commercial
+
+                            </span>
+
+                            <h4>🎋 Sugarcane</h4>
+
+                            <p>
+
+                                High-value crop used in sugar and ethanol production.
+
+                            </p>
+
+                            <ul>
+
+                                <li>Season : Annual</li>
+                                <li>Soil : Deep Loam</li>
+                                <li>Water : High</li>
+                                <li>Duration : 12 Months</li>
+
+                            </ul>
+
+                           
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+                        <!--================ MORE CROPS ====================-->
+
+            <div class="row g-4 mt-2">
+
+                <!-- Maize -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="glass-card crop-card h-100">
+
+                        <img src="maize.jpg"
+                            alt="Maize">
+
+                        <div class="card-body">
+
+                            <span class="badge bg-success mb-2">
+
+                                High Demand
+
+                            </span>
+
+                            <h4>🌽 Maize</h4>
+
+                            <p>
+
+                                Widely cultivated cereal crop used for food,
+                                livestock feed and industrial products.
+
+                            </p>
+
+                            <ul>
+
+                                <li>Season : Kharif</li>
+                                <li>Soil : Fertile Loam</li>
+                                <li>Water : Medium</li>
+                                <li>Duration : 100 Days</li>
+
+                            </ul>
+
+                            
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Millets -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="glass-card crop-card h-100">
+
+                        <img src="millet.png"
+                            alt="Millets">
+
+                        <div class="card-body">
+
+                            <span class="badge bg-warning text-dark mb-2">
+
+                                Nutritious
+
+                            </span>
+
+                            <h4>🌾 Millets</h4>
+
+                            <p>
+
+                                Climate-resilient grains requiring less water
+                                and suitable for dry regions.
+
+                            </p>
+
+                            <ul>
+
+                                <li>Season : Kharif</li>
+                                <li>Soil : Sandy Loam</li>
+                                <li>Water : Low</li>
+                                <li>Duration : 90 Days</li>
+
+                            </ul>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Banana -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="glass-card crop-card h-100">
+
+                        <img src="banana.jpg"
+                            alt="Banana">
+
+                        <div class="card-body">
+
+                            <span class="badge bg-primary mb-2">
+
+                                Fruit Crop
+
+                            </span>
+
+                            <h4>🍌 Banana</h4>
+
+                            <p>
+
+                                Tropical fruit crop grown throughout the year
+                                under warm climatic conditions.
+
+                            </p>
+
+                            <ul>
+
+                                <li>Season : Annual</li>
+                                <li>Soil : Rich Loam</li>
+                                <li>Water : High</li>
+                                <li>Duration : 12 Months</li>
+
+                            </ul>
+
+                           
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Coconut -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="glass-card crop-card h-100">
+
+                        <img src="coconut.jpg"
+                            alt="Coconut">
+
+                        <div class="card-body">
+
+                            <span class="badge bg-info mb-2">
+
+                                Plantation
+
+                            </span>
+
+                            <h4>🥥 Coconut</h4>
+
+                            <p>
+
+                                Plantation crop widely cultivated in tropical
+                                coastal regions.
+
+                            </p>
+
+                            <ul>
+
+                                <li>Season : Annual</li>
+                                <li>Soil : Sandy</li>
+                                <li>Water : Medium</li>
+                                <li>Life : 60+ Years</li>
+
+                            </ul>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--==================== STATISTICS ====================-->
+
+    <section class="counter-section">
+
+        <div class="container">
+
+            <div class="row text-center">
+
+                <div class="col-md-3">
+
+                    <h2 class="counter" data-target="120">0</h2>
+
+                    <p>Crop Varieties</p>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h2 class="counter" data-target="28">0</h2>
+
+                    <p>Indian States</p>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h2 class="counter" data-target="95">0</h2>
+
+                    <p>Productivity %</p>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <h2 class="counter" data-target="15000">0</h2>
+
+                    <p>Farmers Benefited</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--==================== COMPARISON TABLE ====================-->
+
+    <section class="py-5">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <h2 class="fw-bold">
+
+                    Crop Comparison
+
+                </h2>
+
+            </div>
+
+            <div class="glass-card p-4 table-responsive">
+
+                <table class="table table-hover align-middle">
+
+                    <thead class="table-success">
+
+                        <tr>
+
+                            <th>Crop</th>
+
+                            <th>Season</th>
+
+                            <th>Water</th>
+
+                            <th>Duration</th>
+
+                            <th>Profit</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="marketTable">
+
+                        <tr>
+
+                            <td>Rice</td>
+                            <td>Kharif</td>
+                            <td>High</td>
+                            <td>120 Days</td>
+                            <td>★★★★☆</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Wheat</td>
+                            <td>Rabi</td>
+                            <td>Medium</td>
+                            <td>110 Days</td>
+                            <td>★★★☆☆</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Cotton</td>
+                            <td>Kharif</td>
+                            <td>Medium</td>
+                            <td>180 Days</td>
+                            <td>★★★★★</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Sugarcane</td>
+                            <td>Annual</td>
+                            <td>High</td>
+                            <td>12 Months</td>
+                            <td>★★★★★</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Maize</td>
+                            <td>Kharif</td>
+                            <td>Medium</td>
+                            <td>100 Days</td>
+                            <td>★★★★☆</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--==================== SEASONAL CALENDAR ====================-->
+
+    <section class="py-5 bg-light">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <h2 class="fw-bold">
+
+                    Seasonal Crop Calendar
+
+                </h2>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-lg-3">
+
+                    <div class="glass-card p-4 h-100">
+
+                        <h4>🌧 Kharif</h4>
+
+                        <ul>
+
+                            <li>Rice</li>
+                            <li>Cotton</li>
+                            <li>Maize</li>
+                            <li>Soybean</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3">
+
+                    <div class="glass-card p-4 h-100">
+
+                        <h4>❄ Rabi</h4>
+
+                        <ul>
+
+                            <li>Wheat</li>
+                            <li>Mustard</li>
+                            <li>Gram</li>
+                            <li>Barley</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3">
+
+                    <div class="glass-card p-4 h-100">
+
+                        <h4>☀ Zaid</h4>
+
+                        <ul>
+
+                            <li>Watermelon</li>
+                            <li>Cucumber</li>
+                            <li>Muskmelon</li>
+                            <li>Vegetables</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3">
+
+                    <div class="glass-card p-4 h-100">
+
+                        <h4>🌴 Annual</h4>
+
+                        <ul>
+
+                            <li>Banana</li>
+                            <li>Coconut</li>
+                            <li>Sugarcane</li>
+                            <li>Coffee</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+        <!--==================== SMART FARMING TIPS ====================-->
+
+    <section class="py-5">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <h2 class="fw-bold">
+
+                    Smart Farming Practices
+
+                </h2>
+
+                <p class="text-muted">
+
+                    Adopt modern agricultural techniques to improve productivity,
+                    reduce costs and promote sustainable farming.
+
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="glass-card p-4 text-center h-100">
+
+                        <i class="bi bi-droplet-half display-3 text-primary"></i>
+
+                        <h4 class="mt-3">
+
+                            Water Management
+
+                        </h4>
+
+                        <p>
+
+                            Use drip irrigation and sprinkler systems to reduce
+                            water consumption and improve crop yield.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="glass-card p-4 text-center h-100">
+
+                        <i class="bi bi-tree display-3 text-success"></i>
+
+                        <h4 class="mt-3">
+
+                            Organic Farming
+
+                        </h4>
+
+                        <p>
+
+                            Improve soil fertility naturally by using compost,
+                            biofertilizers and organic manure.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="glass-card p-4 text-center h-100">
+
+                        <i class="bi bi-bug display-3 text-danger"></i>
+
+                        <h4 class="mt-3">
+
+                            Pest Control
+
+                        </h4>
+
+                        <p>
+
+                            Monitor pests regularly and use eco-friendly
+                            integrated pest management techniques.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="glass-card p-4 text-center h-100">
+
+                        <i class="bi bi-gear-wide-connected display-3 text-warning"></i>
+
+                        <h4 class="mt-3">
+
+                            Modern Equipment
+
+                        </h4>
+
+                        <p>
+
+                            Use tractors, harvesters and smart agricultural
+                            technologies for better efficiency.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--==================== FAQ ====================-->
+
+    <section class="py-5 bg-light">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <h2 class="fw-bold">
+
+                    Frequently Asked Questions
+
+                </h2>
+
+            </div>
+
+            <div class="accordion" id="cropFaq">
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#faq1">
+
+                            Which crop requires the most water?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="faq1"
+                        class="accordion-collapse collapse show"
+                        data-bs-parent="#cropFaq">
+
+                        <div class="accordion-body">
+
+                            Rice requires a large amount of water compared to
+                            most cereal crops.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button collapsed"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#faq2">
+
+                            Which crop grows well in black soil?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="faq2"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#cropFaq">
+
+                        <div class="accordion-body">
+
+                            Cotton is the most suitable crop for black cotton
+                            soil because of its excellent moisture retention.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button collapsed"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#faq3">
+
+                            Which season is suitable for wheat cultivation?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="faq3"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#cropFaq">
+
+                        <div class="accordion-body">
+
+                            Wheat is mainly cultivated during the Rabi season.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--==================== CALL TO ACTION ====================-->
+
+    <section class="cta-section py-5 text-white">
+
+        <div class="container text-center">
+
+            <h2 class="fw-bold">
+
+                Ready to Explore Smart Agriculture?
+
+            </h2>
+
+            <p class="lead mt-3">
+
+                Discover government schemes, market prices,
+                weather updates and farming tips to maximize
+                your agricultural productivity.
+
+            </p>
+
+            <div class="mt-4">
+
+                <a href="schemes.html"
+                    class="btn btn-success btn-lg rounded-pill px-5 me-3">
+
+                    <i class="bi bi-bank"></i>
+
+                    Government Schemes
+
+                </a>
+
+                <a href="market.html"
+                    class="btn btn-outline-light btn-lg rounded-pill px-5">
+
+                    <i class="bi bi-graph-up-arrow"></i>
+
+                    Market Prices
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--==================== FOOTER ====================-->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="text-center">
+
+                <p class="mb-0">
+
+                    © <span id="year"></span> AgroVision. All Rights Reserved.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+
+    <script >
+        /*==============================
+      CROP SEARCH
+==============================*/
+
+const cropSearch = document.getElementById("cropSearch");
+
+if (cropSearch) {
+
+    cropSearch.addEventListener("keyup", function () {
+
+        const value = this.value.toLowerCase();
+
+        document.querySelectorAll(".crop-card").forEach(card => {
+
+            const text = card.innerText.toLowerCase();
+
+            card.parentElement.style.display =
+                text.includes(value) ? "block" : "none";
+
+        });
+
+    });
+
+}
+
+/*==============================
+      COUNTER ANIMATION
+==============================*/
+
+const counters = document.querySelectorAll(".counter");
+
+const counterObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            const counter = entry.target;
+
+            const target = Number(counter.dataset.target);
+
+            let count = 0;
+
+            const step = Math.ceil(target / 120);
+
+            const timer = setInterval(() => {
+
+                count += step;
+
+                if (count >= target) {
+
+                    counter.innerText = target;
+
+                    clearInterval(timer);
+
+                } else {
+
+                    counter.innerText = count;
+
+                }
+
+            }, 20);
+
+            counterObserver.unobserve(counter);
+
+        }
+
+    });
+
+});
+
+counters.forEach(counter => {
+
+    counterObserver.observe(counter);
+
+});
+
+/*==============================
+      SCROLL REVEAL
+==============================*/
+
+const revealElements = document.querySelectorAll(".glass-card");
+
+const revealObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("active");
+
+        }
+
+    });
+
+}, { threshold: 0.15 });
+
+revealElements.forEach(card => {
+
+    card.classList.add("reveal");
+
+    revealObserver.observe(card);
+
+});
+    </script>
+
+</body>
+
+</html>

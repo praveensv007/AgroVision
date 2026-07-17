@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Prices | AgroVision</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!--================ NAVBAR ================-->
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-tree-fill text-success"></i>
+                AgroVision
+            </a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="crops.html">Crops</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="market.html">Market</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="schemes.html">Schemes</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="tips.html">Tips</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+
+                    <li class="nav-item ms-lg-3">
+                        <a href="login.html" class="btn btn-success rounded-pill px-4">
+                            Login
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!--================ HEADER ================-->
+
+    <section class="page-header market-bg">
+
+        <div class="overlay"></div>
+
+        <div class="container text-center page-content">
+
+            <h1 class="display-4 fw-bold" style="color:rgb(28, 231, 65)">
+                Agricultural Market Prices
+            </h1>
+
+            <p class="lead">
+                Stay updated with the latest crop prices and market trends.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!--================ SEARCH ================-->
+
+    <section class="py-5">
+
+        <div class="container">
+
+            <div class="glass-card p-4">
+
+                <div class="row">
+
+                    <div class="col-lg-8 mb-3">
+
+                        <input type="text"
+                            id="marketSearch"
+                            class="form-control form-control-lg"
+                            placeholder="Search crop...">
+
+                    </div>
+
+                    <div class="col-lg-4">
+
+                        <button class="btn btn-success btn-lg w-100">
+                            <i class="bi bi-search"></i>
+                            Search
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--================ MARKET TABLE ================-->
+
+    <section class="pb-5">
+
+        <div class="container">
+
+            <div class="glass-card p-4">
+
+                <h3 class="mb-4">
+                    Today's Market Prices
+                </h3>
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover align-middle text-center">
+
+                        <thead class="table-success">
+
+                            <tr>
+
+                                <th>Crop</th>
+                                <th>Market</th>
+                                <th>Price (₹/Quintal)</th>
+                                <th>Trend</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="marketTable">
+
+                            <tr>
+
+                                <td>Rice</td>
+
+                                <td>Chennai</td>
+
+                                <td>₹2,450</td>
+
+                                <td class="text-success">
+                                    <i class="bi bi-arrow-up-circle-fill"></i>
+                                    Rising
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Wheat</td>
+
+                                <td>Delhi</td>
+
+                                <td>₹2,180</td>
+
+                                <td class="text-danger">
+                                    <i class="bi bi-arrow-down-circle-fill"></i>
+                                    Falling
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Cotton</td>
+
+                                <td>Coimbatore</td>
+
+                                <td>₹6,750</td>
+
+                                <td class="text-success">
+                                    <i class="bi bi-arrow-up-circle-fill"></i>
+                                    Rising
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Sugarcane</td>
+
+                                <td>Madurai</td>
+
+                                <td>₹340</td>
+
+                                <td class="text-primary">
+                                    <i class="bi bi-dash-circle-fill"></i>
+                                    Stable
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Maize</td>
+
+                                <td>Salem</td>
+
+                                <td>₹2,020</td>
+
+                                <td class="text-success">
+                                    <i class="bi bi-arrow-up-circle-fill"></i>
+                                    Rising
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Millets</td>
+
+                                <td>Trichy</td>
+
+                                <td>₹3,100</td>
+
+                                <td class="text-primary">
+                                    <i class="bi bi-dash-circle-fill"></i>
+                                    Stable
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--================ MARKET HIGHLIGHTS ================-->
+
+    <section class="py-5 bg-light">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <h2 class="fw-bold">
+                    Market Highlights
+                </h2>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-lg-4">
+
+                    <div class="glass-card text-center p-4 h-100">
+
+                        <i class="bi bi-graph-up-arrow display-3 text-success"></i>
+
+                        <h4 class="mt-3">
+                            Price Analysis
+                        </h4>
+
+                        <p>
+                            Compare daily and weekly crop price changes across different markets.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <div class="glass-card text-center p-4 h-100">
+
+                        <i class="bi bi-globe2 display-3 text-success"></i>
+
+                        <h4 class="mt-3">
+                            National Markets
+                        </h4>
+
+                        <p>
+                            View crop prices from major agricultural markets across India.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <div class="glass-card text-center p-4 h-100">
+
+                        <i class="bi bi-cash-coin display-3 text-success"></i>
+
+                        <h4 class="mt-3">
+                            Better Profit
+                        </h4>
+
+                        <p>
+                            Choose the best market to sell your crops for maximum returns.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--================ MARKET NEWS ================-->
+
+    <section class="py-5">
+
+        <div class="container">
+
+            <div class="glass-card p-5">
+
+                <h2 class="fw-bold mb-4">
+                    Latest Agricultural Updates
+                </h2>
+
+                <ul class="list-group list-group-flush">
+
+                    <li class="list-group-item">
+                        🌾 Rice prices increased due to higher export demand.
+                    </li>
+
+                    <li class="list-group-item">
+                        🌽 Maize prices remain stable across South India.
+                    </li>
+
+                    <li class="list-group-item">
+                        🥬 Vegetable supply expected to improve after rainfall.
+                    </li>
+
+                    <li class="list-group-item">
+                        🌱 Organic produce continues to gain premium prices.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--================ FOOTER ================-->
+
+    <footer>
+
+        <div class="container">
+
+            <p class="text-center mb-0">
+                © 2026 AgroVision. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JS -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
